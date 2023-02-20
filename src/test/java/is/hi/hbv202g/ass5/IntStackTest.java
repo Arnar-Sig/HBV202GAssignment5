@@ -55,4 +55,15 @@ public class IntStackTest {
         stack.push(1);
     }
 
+    @Test
+    public void testIsEmptyOnEmptyStack(){
+        assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    public void testIsEmptyOnNotEmptyStack(){
+        stack.push(1);
+        assertFalse(stack.isEmpty());
+    }
+
 }

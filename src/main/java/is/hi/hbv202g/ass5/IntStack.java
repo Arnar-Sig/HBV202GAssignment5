@@ -1,5 +1,7 @@
 package is.hi.hbv202g.ass5;
 
+import java.util.Stack;
+
 /**
  * A very simple stack for storing the basic type int.
  * The stack has a fixed capacity.
@@ -52,7 +54,19 @@ public class IntStack {
         }
     }
 
-    // TODO: Add isEmpty() method
+
+
+    /**
+     * Check if stack is empty.
+     * @return true if stack is empty, false if stack is not empty
+     */
+    public boolean isEmpty(){
+        if (nextPushLocation == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     /**
      * Push on int on the stack.
