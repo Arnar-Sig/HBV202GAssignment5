@@ -19,4 +19,12 @@ public class IntStackTest {
         assertFalse(stack.isFull());
     }
 
+    @Test
+    public void testFullStackIsFull(){
+        for (int i = 0; i < stack.getCapacity(); i++) {
+            stack.push(i);
+        }
+        assertTrue(stack.isFull());
+    }
+
 }
