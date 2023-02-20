@@ -27,4 +27,32 @@ public class IntStackTest {
         assertTrue(stack.isFull());
     }
 
+    @Test
+    public void testOneLessThanFullStack(){
+        for (int i = 0; i < stack.getCapacity()-1 ; i++) {
+            stack.push(i);
+        }
+        assertFalse(stack.isFull());
+    }
+
+    @Test
+    public void testPopReturnsPushedValue(){
+        int p = 5;
+        stack.push(p);
+        assertEquals(p, stack.pop());
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void testPopOnEmptyStack(){
+        stack.pop();
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void testPushOnFullStack(){
+        for (int i = 0; i < stack.getCapacity(); i++) {
+            stack.push(i);
+        }
+        stack.push(1);
+    }
+
 }
